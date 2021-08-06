@@ -183,7 +183,7 @@ h3{
 /* banner */
 .banner{
   width: 80vw;
-  margin: 5% auto;
+  margin: auto;
 }
 .banner img{
   max-width: 100%;
