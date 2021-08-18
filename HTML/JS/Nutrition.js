@@ -97,7 +97,10 @@ new ScrollMagic.Scene({
   triggerElement : '#kp1',
   triggerHook : 0,
   duration : '200px',
-}).setPin('.nutrition').setTween(nuto).addIndicators().addTo(controller);
+}).setPin('.nutrition').setTween(nuto).addIndicators({
+  colorTrigger : 'transparent',
+  colorEnd : 'transparent',
+}).addTo(controller);
 //
 
 
