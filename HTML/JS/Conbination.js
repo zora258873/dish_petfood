@@ -86,19 +86,17 @@ $(function () {
 });
 
 //Combination sum
-$(function () {
-  let meatPrice = 0;
-  $('.foodmeat').click(function () {debugger;
-    meatPrice = Number($(this).prev().val());
-    $('.meatprice').text(meatPrice);
-  });
-});
-$(function(){
-  let oilPrice = 0;
-  $('.foodoil').click(function () {
-    oilPrice = Number($(this).next().val());
-    $('.oilprice').text(oilPrice);
-  });
+var vm = new Vue({
+  el:"#app",
+  data: {
+    oilPrice: 0,
+    meatPrice: 0,
+  },
+  computed: {
+    sum: function(){
+      return parseInt(this.meatPrice) + parseInt(this.oilPrice);
+    }
+  }
 })
 
 //Conbination changePic

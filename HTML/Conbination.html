@@ -56,7 +56,7 @@
     <span><i class="fas fa-angle-down"></i></span>
   </div>
   <!-- Combination -->
-<div class="combination">
+  <div class="combination" id="app">
     <div class="breedSelector">
       <ul>
         <li class="selectorBtn">超小型犬</li>
@@ -69,43 +69,55 @@
     <div class="combine Meat">
       <div class="largeMeat"><img id="meatLarge" src="./Pic/chicken.png" alt=""></div>
       <div class="small meat">
-        <img class="smallmeatPic" src="./Pic/chicken.png" alt=""><input  type="hidden" value="100" data-value="雞肉"><input type="radio" class="foodmeat" value="" name="meat">雞肉
-        <img class="smallmeatPic" src="./Pic/beef.png" alt=""><input  type="hidden" value="200" data-value="牛肉"><input type="radio" class="foodmeat" name="meat">牛肉
-        <img class="smallmeatPic" src="./Pic/lamb.png" alt=""><input  type="hidden" value="300" data-value="羊肉"><input type="radio" class="foodmeat" name="meat">羊肉
-        <img class="smallmeatPic" src="./Pic/fish.png" alt=""><input  type="hidden" value="400" data-value="魚肉"><input type="radio" class="foodmeat" name="meat">魚肉
+        <div class="meatWrap">
+          <img class="smallmeatPic" src="./Pic/chicken.png" alt=""><input type="radio" class="foodmeat" name="meat" value="100" v-model="meatPrice">雞肉
+        </div>
+        <div class="meatWrap">
+          <img class="smallmeatPic" src="./Pic/beef.png" alt=""><input
+            type="radio" class="foodmeat" name="meat" value="200" v-model="meatPrice">牛肉
+        </div>
+        <div class="meatWrap">
+          <img class="smallmeatPic" src="./Pic/lamb.png" alt=""><input
+            type="radio" class="foodmeat" name="meat" value="300" v-model="meatPrice">羊肉
+        </div>
+        <div class="meatWrap">
+          <img class="smallmeatPic" src="./Pic/fish.png" alt=""><input
+            type="radio" class="foodmeat" name="meat" value="400" v-model="meatPrice">魚肉
+        </div>
       </div>
       <div class="dwicon">
         <i class="fas fa-angle-down"></i>
-      </div>
-    </div>
-    <div class="selectFood">
-      <div class="selectPic"></div>
-      <div class="total">
-        <span>價格</span><br>
-        <p></p>
-        <div class="meatprice"></div>
       </div>
     </div>
 
     <div class="combine Oil">
       <div class="largeOil"><img id="oilLarge" src="./Pic/oil1.png" alt=""></div>
       <div class="small oil">
-        <img class="smalloilPic" src="./Pic/oil1.png" alt=""><input type="radio" class="foodoil" value="" name="oil">亞麻籽油<input type="hidden" value="100" data-value="亞麻籽油">
-        <img class="smalloilPic" src="./Pic/oil2.png" alt=""><input type="radio" class="foodoil" name="oil">橄欖油<input  type="hidden" value="200" data-value="橄欖油">
-        <img class="smalloilPic" src="./Pic/oil3.png" alt=""><input type="radio" class="foodoil" name="oil">葵花油<input  type="hidden" value="300" data-value="葵花油">
-        <img class="smalloilPic" src="./Pic/oil4.png" alt=""><input type="radio" class="foodoil" name="oil">芝麻油<input  type="hidden" value="400" data-value="芝麻油">
+        <div class="oilWrap" >
+          <img class="smalloilPic" src="./Pic/oil1.png" alt=""><input type="radio" class="foodoil"
+            name="oil" value="100" v-model="oilPrice">亞麻籽油
+        </div>
+        <div class="oilWrap" >
+          <img class="smalloilPic" src="./Pic/oil2.png" alt=""><input type="radio" class="foodoil" name="oil" value="200" v-model="oilPrice">橄欖油
+        </div>
+        <div class="oilWrap" >
+          <img class="smalloilPic" src="./Pic/oil3.png" alt=""><input type="radio" class="foodoil" name="oil" value="300" v-model="oilPrice">葵花油
+        </div>
+        <div class="oilWrap" >
+          <img class="smalloilPic" src="./Pic/oil4.png" alt=""><input type="radio" class="foodoil" name="oil" value="400" v-model="oilPrice">芝麻油
+        </div>
       </div>
     </div>
 
-  <div class="selectFood">
-    <div class="selectPic"></div>
-    <div class="total">
-      <span>價格</span><br>
-      <p></p>
-      <div class="oilprice"></div>
+    <div class="selectFood">
+      <div class="selectPic"></div>
+      <div class="total">
+        <span>價格</span><br>
+        <p input="text"> {{ meatPrice }} + {{ oilPrice }} </p>
+        <div class="totalprice"> = {{ sum }}</div>
+      </div>
     </div>
   </div>
-</div>
 
   <!-- Footer -->
   <Footer>
@@ -149,6 +161,7 @@
     </div>
   </Footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
   <script src="./JS/Conbination.js"></script>
 </body>
